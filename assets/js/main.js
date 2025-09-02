@@ -1,12 +1,19 @@
 function markActive() {
-  const path = location.pathname.replace(/index\.html$/, "");
+  // Normalize current path and link targets
+  let path = location.pathname;
+  if (path === "" || path === "/") path = "/";            // Home
+  path = path.replace(/index\.html$/, "");
+
   document.querySelectorAll(".nav a").forEach(a => {
-    const href = a.getAttribute("href").replace(/index\.html$/, "");
+    let href = a.getAttribute("href") || "";
+    href = href.replace(/index\.html$/, "");
+    if (href === "") href = "/";                           // treat empty as Home
     if (href === path) a.classList.add("active");
   });
 }
 
 document.addEventListener("includes:loaded", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
   markActive();
 });
