@@ -12,3 +12,7 @@ body {
   background: url("/assets/img/background.avif") no-repeat center center fixed;
   background-size: cover;
 }
+
+.section { padding: 2.5rem 0; }
+.section .lead { color: var(--muted); font-size: 1.05rem; max-width: 70ch; }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .6rem; }

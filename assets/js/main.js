@@ -1,6 +1,7 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Simple mobile menu hook if you later add a burger button
-// document.querySelector(".menu-btn")?.addEventListener("click", () => {
-//   document.querySelector(".nav")?.classList.toggle("open");
-// });
+const path = location.pathname.replace(/index\.html$/, "");
+document.querySelectorAll(".nav a").forEach(a => {
+  const href = a.getAttribute("href").replace(/index\.html$/, "");
+  if (href === path) a.classList.add("active");
+});
