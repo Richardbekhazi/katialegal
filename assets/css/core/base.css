@@ -10,10 +10,10 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; height: 100%; }
 
-/* page layout: sticky footer */
+/* sticky footer layout */
 body {
-  display: flex;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
@@ -28,7 +28,7 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 .6rem; }
 .section { padding: 2.5rem 0; }
 .section .lead { color: var(--muted); font-size: 1.05rem; max-width: 70ch; }
 
-/* header and footer basic layout */
+/* header / footer */
 .site-header {
   background: var(--surface);
   position: sticky; top: 0; z-index: 10;
