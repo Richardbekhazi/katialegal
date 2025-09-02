@@ -1,14 +1,29 @@
+/* Hero: centered heading + soft glow that extends past the section */
 .hero {
   position: relative;
-  padding: 6rem 0 3rem;
+  padding: 6rem 0 3rem;   /* top / bottom spacing */
   text-align: center;
+  overflow: visible;      /* let the glow extend out */
 }
 
 .hero::before {
   content: "";
-  position: absolute; inset: 0;
-  /* soft radial highlight behind hero text */
-  background: radial-gradient(1200px 500px at 50% 0%, rgba(77,163,255,.12), transparent);
+  position: absolute;
+  /* extend the overlay above and below the hero to avoid a hard edge */
+  top: -60px;
+  left: 0;
+  right: 0;
+  bottom: -140px;
+
+  /* soft glow that fades out smoothly */
+  background: radial-gradient(
+      1200px 700px at 50% 0%,
+      rgba(77,163,255,.14) 0%,
+      rgba(77,163,255,.08) 40%,
+      transparent 75%
+  );
+  pointer-events: none;
 }
+
 .hero > .container { position: relative; z-index: 1; }
 .hero .btn { margin-top: 1rem; }

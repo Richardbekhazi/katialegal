@@ -46,10 +46,8 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 .6rem; }
 .site-footer a { color: var(--text); }
 
 
-/* Global site background image (visible on all pages) */
-body {
-  position: relative; /* create a stacking context for the pseudo element */
-}
+/* Global site background image */
+body { position: relative; }
 
 body::before {
   content: "";
