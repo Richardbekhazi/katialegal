@@ -1,0 +1,7 @@
+.hero {
+  padding: 6rem 0 3rem;
+  background: radial-gradient(1200px 500px at 50% 0%, rgba(77,163,255,.15), transparent);
+  text-align: center;
+}
+.hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin: 0 0 .6rem; }
+.hero p { color: var(--muted); margin: 0 0 1.2rem; }

@@ -1,0 +1,5 @@
+.brand { display: flex; align-items: center; gap: .6rem; color: var(--text); }
+.brand img { width: 36px; height: 36px; object-fit: contain; }
+.nav { display: flex; gap: 1rem; align-items: center; }
+.nav a { opacity: .9; }
+.nav a:hover { opacity: 1; }

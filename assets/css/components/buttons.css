@@ -1,0 +1,8 @@
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.btn.primary { background: var(--brand); border-color: transparent; color: #071019; }
+.btn.primary:hover { filter: brightness(1.07); }

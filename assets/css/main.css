@@ -1,72 +1,15 @@
-:root {
-  --bg: #0e1726;
-  --surface: #111a2b;
-  --text: #e7eef8;
-  --muted: #a9b4c2;
-  --brand: #4da3ff;
-}
+/* Core first. Then components. Then sections. Then utilities. */
+@import url("./core/variables.css");
+@import url("./core/reset.css");
+@import url("./core/base.css");
+@import url("./core/layout.css");
 
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-}
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/nav.css");
+@import url("./components/forms.css");
 
-.container { width: min(1100px, 92%); margin: 0 auto; }
+@import url("./sections/hero.css");
+@import url("./sections/footer.css");
 
-.site-header {
-  background: var(--surface);
-  position: sticky; top: 0; z-index: 10;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--text); }
-.brand img { width: 36px; height: 36px; object-fit: contain; }
-.nav { display: flex; gap: 1rem; align-items: center; }
-.nav a { color: var(--text); text-decoration: none; opacity: .9; }
-.nav a:hover { opacity: 1; }
-.site-header .container { display: flex; justify-content: space-between; align-items: center; padding: .9rem 0; }
-
-.hero {
-  padding: 6rem 0 3rem;
-  background: radial-gradient(1200px 500px at 50% 0%, rgba(77,163,255,.15), transparent);
-  text-align: center;
-}
-.hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin: 0 0 .6rem; }
-.hero p { color: var(--muted); margin: 0 0 1.2rem; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-}
-.card {
-  background: var(--surface);
-  padding: 1.2rem;
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 12px;
-}
-
-.btn {
-  display: inline-block;
-  padding: .6rem 1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,.2);
-  text-decoration: none;
-  color: var(--text);
-}
-.btn.primary { background: var(--brand); border-color: transparent; color: #071019; }
-.btn.primary:hover { filter: brightness(1.07); }
-
-.highlights { padding: 2rem 0 3rem; }
-.cta { padding: 3rem 0 4rem; text-align: center; }
-
-.site-footer {
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255,255,255,.08);
-  background: #0c1422;
-  color: var(--muted);
-}
-.site-footer a { color: var(--text); }
+@import url("./utilities/helpers.css");
