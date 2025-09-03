@@ -1,48 +1,53 @@
-﻿/* ===== CTA ===== */
+﻿/* ===== CTA (consolidated & centered) ===== */
 .cta {
-  margin: 3rem 0 0;
-  text-align: center;
+  margin: 3rem 0;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, rgba(77,163,255,0.15), rgba(0,0,0,0.6));
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
 }
 
-.cta__inner {
-  max-width: 760px;
+/* If the inner element also has .container, keep it narrow & centered */
+.cta .container {
+  max-width: 700px;
   margin: 0 auto;
-  padding: 2.4rem 1rem;
+}
+
+/* Absolute centering for every child (title, text, button) */
+.cta__inner {
+  display: grid;
+  gap: 1rem;
+  justify-items: center; /* centers children horizontally */
+  text-align: center;    /* centers text inside children */
+}
+
+/* Make sure all direct children are visually centered, even if a
+   more specific external rule tries to left-align */
+.cta__inner > * {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta__title {
-  margin: 0 0 .35rem;
-  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
 }
+
 .cta__text {
-  margin: 0 0 1.2rem;
-  color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  color: var(--muted, #bbb);
+  max-width: 560px;
+  margin: 0;
 }
 
-/* Variant: full-width “stripe” with soft gradient and divider */
-.cta--stripe {
-  background:
-    linear-gradient(180deg, rgba(77,163,255,.10), rgba(77,163,255,0) 55%);
-  border-top: 1px solid rgba(255,255,255,.06);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
-}
-
-/* Variant: contained panel with rounded corners */
-.cta--panel .cta__inner {
-  background: linear-gradient(135deg, rgba(77,163,255,.14), rgba(9,14,24,.85));
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 16px;
-  box-shadow: 0 14px 34px rgba(0,0,0,.35);
-}
-
-/* Larger primary button for CTA */
 .btn--xl {
-  padding: .95rem 1.6rem;
+  padding: .95rem 1.8rem;
   font-size: 1.12rem;
   border-radius: 12px;
+  margin-top: 0.5rem;
   box-shadow: 0 10px 28px rgba(66,150,239,.4);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 .btn--xl:hover {
   transform: translateY(-3px);
