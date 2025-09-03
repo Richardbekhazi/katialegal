@@ -1,10 +1,42 @@
+/* Base button */
 .btn {
-  display: inline-block;
-  padding: .6rem 1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,.2);
+  --ring: rgba(93,178,255,.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .68rem 1.05rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.18);
   color: var(--text);
   text-decoration: none;
+  line-height: 1;
+  font-weight: 600;
+  transition: transform .15s ease, box-shadow .2s ease,
+              background .2s ease, border-color .2s ease, filter .2s ease;
 }
-.btn.primary { background: var(--brand); border-color: transparent; color: #071019; }
-.btn.primary:hover { filter: brightness(1.07); }
+.btn:hover   { transform: translateY(-2px); }
+.btn:active  { transform: translateY(0) scale(.99); }
+
+/* Primary (refined blue) */
+.btn.primary {
+  background: linear-gradient(180deg, #5db2ff, #4296ef);
+  color: #071019;
+  border-color: rgba(93,178,255,.55);
+  box-shadow: 0 8px 22px rgba(66,150,239,.35);
+}
+.btn.primary:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 12px 26px rgba(66,150,239,.45);
+}
+
+/* Ghost/secondary */
+.btn.ghost {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.2);
+}
+.btn.ghost:hover { background: rgba(255,255,255,.1); }
+
+/* Sizes */
+.btn--lg  { padding: .85rem 1.2rem; font-size: 1.05rem; }
+.btn--xl  { padding: .95rem 1.6rem; font-size: 1.12rem; }

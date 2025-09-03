@@ -1,66 +1,67 @@
+/* ========== Grid helpers ========== */
 .grid { display: grid; gap: 1.1rem; }
 .cards-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.cards--center { justify-items: center; }
+.section--center { text-align: center; padding: 3rem 0; }
 
+/* ========== Card base ========== */
 .card {
   background: rgba(17, 26, 43, .86);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 16px;
-  padding: 1.2rem 1.2rem 1.1rem;
+  padding: 1.2rem;
   box-shadow: 0 20px 40px rgba(0,0,0,.25);
-}
-
-.card--area { position: relative; }
-.card__icon { font-size: 1.6rem; line-height: 1; opacity: .95; }
-.card--area h3 { margin: .4rem 0 .35rem; }
-.card--area p { color: var(--muted); margin: 0 0 .7rem; }
-.card__link { color: var(--text); opacity: .85; text-decoration: none; }
-.card__link:hover { opacity: 1; text-decoration: underline; }
-
-/* Steps */
-.step { text-align: left; }
-.step__num {
-  display: inline-grid; place-items: center;
-  width: 36px; height: 36px; border-radius: 12px;
-  background: var(--brand); color: #071019; font-weight: 700;
-  margin-bottom: .6rem;
-}
-.step p { color: var(--muted); margin: .35rem 0 0; }
-
-/* Center alignment for sections */
-.section--center {
-  text-align: center;
-  padding: 3rem 0;
-}
-.cards--center {
-  justify-items: center;
-}
-
-/* Hover animation for cards */
-.card {
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  height: 100%;
 }
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 14px 32px rgba(77,163,255,.25);
-  border-color: rgba(77,163,255,.4);
+  box-shadow: 0 16px 36px rgba(77,163,255,.24);
+  border-color: rgba(77,163,255,.42);
 }
 
-/* Animate icon on hover */
+/* ========== Practice-area cards ========== */
+.card--area { text-align: center; }
 .card__icon {
   display: inline-block;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  line-height: 1;
+  opacity: .95;
+  margin: .2rem 0 .5rem;
   transition: transform .3s ease;
 }
-.card:hover .card__icon {
-  transform: scale(1.15) rotate(-6deg);
-}
+.card--area h3 { margin: .4rem 0 .35rem; }
+.card--area p  { color: var(--muted); margin: 0 0 .7rem; }
+.card__link    { color: var(--text); opacity: .9; text-decoration: none; }
+.card__link:hover { opacity: 1; text-decoration: underline; }
+.card:hover .card__icon { transform: scale(1.12) rotate(-4deg); }
 
-/* Step numbers hover style */
+/* ========== How it works (steps) ========== */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.4rem 1.2rem;
+}
 .step__num {
-  transition: transform .25s ease, background .25s ease;
+  display: grid; place-items: center;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--brand);
+  color: #071019;
+  font-weight: 800; font-size: 1.1rem;
+  margin: .1rem 0 .5rem;
+  box-shadow: 0 8px 22px rgba(77,163,255,.35),
+              inset 0 0 0 1px rgba(255,255,255,.25);
+  transition: transform .25s ease;
 }
-.step:hover .step__num {
-  transform: scale(1.1);
-  background: #fff;
-  color: var(--brand);
+.step__icon {
+  font-size: 1.6rem;
+  margin: .15rem 0 .55rem;
+  transition: transform .25s ease;
 }
+.step h3 { margin: .25rem 0 .25rem; }
+.step p  { margin: 0; color: var(--muted); }
+
+.step:hover .step__num  { transform: translateY(-2px) scale(1.05); }
+.step:hover .step__icon { transform: translateY(-1px) scale(1.06); }

@@ -1,1 +1,27 @@
-/* footer specific additions can live here if needed later */
+/* ===== Footer ===== */
+.site-footer {
+  background: #0c1422;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: 2.4rem;
+  color: var(--muted);
+}
+
+.footer__inner {
+  display: grid;
+  gap: .4rem;
+  justify-items: center;
+  padding: 1.4rem 1rem 2rem;
+}
+
+.footer__copy { margin: 0; opacity: .95; }
+.footer__nav {
+  display: flex; gap: .6rem;
+  align-items: center;
+  font-size: .98rem;
+}
+.footer__nav a {
+  color: var(--text);
+  opacity: .85;
+  text-decoration: none;
+}
+.footer__nav a:hover { opacity: 1; text-decoration: underline; }
